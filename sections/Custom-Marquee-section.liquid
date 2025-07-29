@@ -1,0 +1,188 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: calc({{ section.settings.padding_top }}px * 0.75);
+    padding-bottom: calc({{ section.settings.padding_bottom }}px  * 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding custom-marquee-content">
+    {% if section.settings.main-heading != blank %}
+      <h2 class="Mheading">{{ section.settings.main-heading }}</h2>
+    {% endif %}
+     <div class="marquee-icons-track">
+      {% for block in section.blocks %}
+        <div class="marquee-item">
+          {% if section.settings.icon_image %}
+            <img src="{{ section.settings.icon_image | image_url}}" alt="icon" class="icon-image">
+          {% endif %}
+          <span class="marquee-text" style="color: {{ section.settings.marquee_text_color }}">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+  
+      {% for block in section.blocks %}
+        <div class="marquee-item">
+          {% if section.settings.icon_image %}
+            <img src="{{ section.settings.icon_image | image_url }}" alt="icon" class="icon-image">
+          {% endif %}
+          <span class="marquee-text" style="color: {{ section.settings.marquee_text_color }}">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+
+       {% for block in section.blocks %}
+        <div class="marquee-item">
+          {% if section.settings.icon_image %}
+            <img src="{{ section.settings.icon_image | image_url }}" alt="icon" class="icon-image">
+          {% endif %}
+          <span class="marquee-text" style="color: {{ section.settings.marquee_text_color }}">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee Section",
+  "tag": "section",
+  "class": "section custom-marquee-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "main-heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon image"
+    },
+    {
+      "type": "color",
+      "id": "marquee_text_color",
+      "label": "Marquee Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+    "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Superfood-Powered"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Marquee Section"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.custom-marquee-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.custom-marquee-section .Mheading {
+    padding: 0 20px;
+    text-align: center;
+}
+.custom-marquee-section .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+    padding: 0 20px;
+    color: #fff;
+}
+.custom-marquee-section .marquee-item .marquee-text {
+    font-family: 'Helvetica Neue';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.15em;
+    letter-spacing: 0;
+}
+
+.custom-marquee-section {
+    overflow: hidden;
+}
+.custom-marquee-section .marquee-icons-section {
+    overflow: hidden;
+    padding: 10px 0;
+}
+.custom-marquee-section .marquee-icons-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+}
+.custom-marquee-section .marquee-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.125;
+}
+.custom-marquee-section .icon-image {
+  width: 27px;
+  height: 27px;
+  margin: 0 8px;
+}
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>

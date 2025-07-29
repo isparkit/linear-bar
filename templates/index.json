@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "video_mEh49T": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "overlay_sub_text": "",
+        "overlay_text": "",
+        "button_text": "",
+        "button_link": "",
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/LINEAR BAR video MAINSTREAM R4.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "custom_click_content_slider_XYDaUd": {
+      "type": "Custom-Click-Content-Slider",
+      "blocks": {
+        "slide_7GFLhh": {
+          "type": "slide",
+          "settings": {
+            "left_text": "ZERO",
+            "right_text": "Seed oils"
+          }
+        },
+        "slide_BULXji": {
+          "type": "slide",
+          "settings": {
+            "left_text": "HERO",
+            "right_text": "Sucralose"
+          }
+        },
+        "slide_jxQDQ7": {
+          "type": "slide",
+          "settings": {
+            "left_text": "ZERO",
+            "right_text": "compromises"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7GFLhh",
+        "slide_BULXji",
+        "slide_jxQDQ7"
+      ],
+      "name": "Text Switch Slider",
+      "settings": {
+        "back_im": "#41e1d1"
+      }
+    },
+    "custom_marquee_section_46jHGc": {
+      "type": "Custom-Marquee-section",
+      "blocks": {
+        "text_item_pewGH9": {
+          "type": "text_item",
+          "settings": {
+            "text": "Built clean"
+          }
+        },
+        "text_item_NQUcAn": {
+          "type": "text_item",
+          "settings": {
+            "text": "premium protein"
+          }
+        },
+        "text_item_qwipjG": {
+          "type": "text_item",
+          "settings": {
+            "text": "Zero compromises"
+          }
+        },
+        "text_item_QfJ6eM": {
+          "type": "text_item",
+          "settings": {
+            "text": "Truth in every layer"
+          }
+        },
+        "text_item_nQ3gcf": {
+          "type": "text_item",
+          "settings": {
+            "text": "indulgent taste"
+          }
+        }
+      },
+      "block_order": [
+        "text_item_pewGH9",
+        "text_item_NQUcAn",
+        "text_item_qwipjG",
+        "text_item_QfJ6eM",
+        "text_item_nQ3gcf"
+      ],
+      "name": "Custom Marquee Section",
+      "settings": {
+        "color_scheme": "scheme-e0666173-11b0-4d4f-83d8-97d7b159e344",
+        "main-heading": "",
+        "icon_image": "shopify://shop_images/Group_2497.png",
+        "marquee_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "video_mEh49T",
+    "custom_click_content_slider_XYDaUd",
+    "custom_marquee_section_46jHGc"
+  ]
+}

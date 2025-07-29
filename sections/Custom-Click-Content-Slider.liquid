@@ -1,0 +1,147 @@
+{% schema %}
+{
+  "name": "Text Switch Slider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "back_im",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "left_text",
+          "label": "Left Large Text",
+          "default": "ZERO"
+        },
+        {
+          "type": "text",
+          "id": "right_text",
+          "label": "Right Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Text Switch Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+
+<style>
+.slider-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.slider-left {
+  flex: 1;
+  font-size: 80px;
+  font-weight: bold;
+  color: black;
+  transition: opacity 0.4s ease;
+}
+.slider-right ul {
+  list-style: none;
+  padding: 0;
+}
+.slider-right li {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #fff8d0;
+  transition: color 0.3s ease;
+}
+.slider-right li.active {
+  color: black;
+}
+.slider-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider-indicators span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  margin: 0 4px;
+  border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.slider-indicators span.active {
+  opacity: 1;
+}
+</style>
+
+<div class="main-slider-sec" style="background-color :{{ section.settings.back_im }}">
+  <div class="page-width">
+    <div class="slider-wrapper">
+  <div class="slider-left" id="slider-left-text">
+    {{ section.blocks[0].settings.left_text }}
+  </div>
+  <div class="slider-right">
+    <ul id="slider-tabs">
+      {% for block in section.blocks %}
+        <li data-index="{{ forloop.index0 }}" class="{% if forloop.first %}active{% endif %}">
+          {{ block.settings.right_text }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="slider-indicators" id="slider-dots">
+    {% for block in section.blocks %}
+      <span class="{% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></span>
+    {% endfor %}
+  </div>
+    </div>   
+  </div> 
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = document.querySelectorAll("#slider-tabs li");
+  const leftText = document.getElementById("slider-left-text");
+  const dots = document.querySelectorAll("#slider-dots span");
+
+  const texts = {{ section.blocks | map: 'settings' | map: 'left_text' | json }};
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function() {
+      const index = this.getAttribute("data-index");
+
+      // update left text
+      leftText.style.opacity = 0;
+      setTimeout(() => {
+        leftText.textContent = texts[index];
+        leftText.style.opacity = 1;
+      }, 200);
+
+      // update active tab
+      tabs.forEach(t => t.classList.remove("active"));
+      this.classList.add("active");
+
+      // update dots
+      dots.forEach(d => d.classList.remove("active"));
+      dots[index].classList.add("active");
+    });
+  });
+});
+</script>
