@@ -13,10 +13,6 @@
       "type": "video",
       "name": "t:sections.video.presets.name",
       "settings": {
-        "overlay_sub_text": "",
-        "overlay_text": "",
-        "button_text": "",
-        "button_link": "",
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": false,
