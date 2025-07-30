@@ -1,9 +1,6 @@
 /* Footer css */
 
 .custom-footer .footer__content-top {
-    display: flex !important;
-    justify-content: space-between !important;
-    gap: 50px;
     border: 1px solid #fff;
     margin-left: 150px;
     margin-right: 150px;
@@ -30,7 +27,7 @@
 
 .custom-footer .list-social {
     justify-content: flex-start !important;
-    padding-top:12px;
+    padding-top: 12px;
 }
 
 .custom-footer ul.footer-block__details-content.list-unstyled li {
@@ -66,6 +63,15 @@
 .newsletter-form {
     max-width: unset !important;
 }
+
 .cu-priv {
     padding-top: 20px;
+}
+
+.ss,.cs-bottom {
+    display: flex;
+    gap: 55px;
+}
+.w-50 {
+    width: 50%;
 }
