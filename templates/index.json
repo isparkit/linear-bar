@@ -110,11 +110,84 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "testimonials_wGbHdT": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_fgdFzC": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "author": "Jane Doe",
+            "comment": "<p>This product is amazing! Highly recommended.</p>",
+            "date": "July 30, 2025",
+            "show_date": true,
+            "enable_social": false
+          }
+        },
+        "testimonial_reaQYM": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "author": "Jane Doe",
+            "comment": "<p>This product is amazing! Highly recommended.</p>",
+            "date": "July 30, 2025",
+            "show_date": true,
+            "enable_social": false
+          }
+        },
+        "testimonial_xncn8L": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "author": "Jane Doe",
+            "comment": "<p>This product is amazing! Highly recommended.</p>",
+            "date": "July 30, 2025",
+            "show_date": true,
+            "enable_social": false
+          }
+        },
+        "testimonial_6h7H67": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "author": "Jane Doe",
+            "comment": "<p>This product is amazing! Highly recommended.</p>",
+            "date": "July 30, 2025",
+            "show_date": true,
+            "enable_social": false
+          }
+        },
+        "testimonial_KUt3f3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "author": "Jane Doe",
+            "comment": "<p>This product is amazing! Highly recommended.</p>",
+            "date": "July 30, 2025",
+            "show_date": true,
+            "enable_social": false
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fgdFzC",
+        "testimonial_reaQYM",
+        "testimonial_xncn8L",
+        "testimonial_6h7H67",
+        "testimonial_KUt3f3"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "background_color": "#f8f8f8",
+        "section_title": "What Our Customers Say"
+      }
     }
   },
   "order": [
     "video_mEh49T",
     "custom_click_content_slider_XYDaUd",
-    "custom_marquee_section_46jHGc"
+    "custom_marquee_section_46jHGc",
+    "testimonials_wGbHdT"
   ]
 }
