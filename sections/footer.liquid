@@ -52,6 +52,7 @@
   -%}
     {%- unless only_empty_brand -%}
       <div class="footer__content-top page-width">
+      <div class="footer-container">
         {%- if section.blocks.size > 0 -%}
           {%- liquid
             if section.blocks.size == 9
@@ -62,7 +63,7 @@
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
           -%}
-          <div class="ss">
+          <div class="footer-top_nav">
             <div class="custo-first">
               <div class="custom-footer-im">
                 {% if section.settings.fo_img != blank %}
@@ -164,9 +165,10 @@
               </div>
         {%- endif -%}
       </div>
+     
 
       <div
-        class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        class="footer-block--newsletter {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         {% if settings.animations_reveal_on_scroll %}
           data-cascade
         {% endif %}
@@ -210,6 +212,9 @@
                     id="Subscribe"
                     aria-label="{{ 'newsletter.button_label' | t }}"
                   >
+                    {% if section.settings.newsletter_btn_text != blank %}
+                    <span class="button_text">{{section.settings.newsletter_btn_text}}</span>
+                  {% endif %}
                     <span class="svg-wrapper">
                       {{- 'icon-arrow.svg' | inline_asset_content -}}
                     </span>
@@ -249,13 +254,15 @@
         {%- endif -%}
       </div>
       </div>
-      <div class="cs-bottom">
+      <div class="footer-bottom_nav">
         <div class="cus-icon w-50">
           {%- if section.settings.show_social and has_social_icons -%}
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
-        <div class="cu-priv w-50">Terms & Conditions | Privacy Policy</div>
+        {% if section.settings.custom_policy != blank %}
+        <div class="cu-priv w-50">{{section.settings.custom_policy}}</div>
+        {% endif %}
       </div>
       </div>
     {%- endunless -%}
@@ -460,10 +467,21 @@
       "label": "t:sections.footer.settings.newsletter_enable.label"
     },
     {
+      "type":"text",
+      "id":"newsletter_btn_text",
+      "label":"Enter Button text",
+      "default":"Sign Up"
+    },
+    {
       "type": "inline_richtext",
       "id": "newsletter_heading",
       "default": "t:sections.footer.settings.newsletter_heading.default",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type":"richtext",
+      "id":"custom_policy",
+      "label":"Custom Policies"
     },
     {
       "type": "header",
