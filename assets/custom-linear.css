@@ -2,10 +2,10 @@
 
 .custom-footer .footer__content-top {
     border: 1px solid #fff;
-    margin-left: 150px;
-    margin-right: 150px;
     border-radius: 28px;
     padding-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-block--newsletter.scroll-trigger.animate--slide-in {
